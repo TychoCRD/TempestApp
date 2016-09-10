@@ -32,7 +32,7 @@ export var stopCountdown = ()=>{
 
 export var addKeyword = (text)=>{
   return {
-    type: 'ADD_KEYWORD'
+    type: 'ADD_KEYWORD',
     text
   };
 };
