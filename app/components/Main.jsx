@@ -9,8 +9,8 @@ import Display from 'Display';
 var Main = React.createClass({
   renderUI: function(){
     // appState
-    var appState = 'settings';
-    switch(appState){
+    var {appStage} = this.props;
+    switch(appStage){
       case 'settings':
         return <Settings/>;
       case 'ideation':
@@ -31,4 +31,8 @@ var Main = React.createClass({
   }
 });
 
-export default Main;
+export default connect((state)=>{
+  return {
+    appStage: state.appStage
+  };
+})(Main);

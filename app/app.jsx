@@ -1,6 +1,10 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+import {Provider} from 'react-redux';
 var {Route, Router, IndexRoute, hashHistory} = require('react-router');
+
+//import actions from 'actions';
+var store = require('configureStore').configure();
 import Main from 'Main';
 
 
@@ -13,6 +17,8 @@ $(document).foundation();
 require('style!css!sass!applicationStyles');
 
 ReactDOM.render(
-	<Main/>,
+	<Provider store={store}>
+	<Main/>
+	</Provider>,
 	document.getElementById('app')
 	);
