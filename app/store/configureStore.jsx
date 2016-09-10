@@ -1,31 +1,28 @@
 import * as redux from 'redux';
 import thunk from 'redux-thunk';
 
-var initialState = {
-  appStage: 'settings',
-  count: 300,
-  countdownStatus: 'stopped',
-  masterKeywords: [],
-  allKeywords: [],
-  wordCloudUrl: undefined,
-  ideas: []
-};
+import {appStageReducer, countReducer, countdownStatusReducer, masterKeywordsReducer} from 'reducers';
 
-export var configure = (initialState = initialState)=>{
 
-  var reducer = (whatevs)=>{
-    return {
-      appStage: 'display',
-      count: 300,
-      countdownStatus: 'stopped',
-      masterKeywords: [],
-      allKeywords: [],
-      wordCloudUrl: undefined,
-      ideas: []
-    };
-  };
+export var configure = (initialState = {})=>{
+  //
+  // initial  = {
+  //     appStage: 'display',
+  //     count: 300,
+  //     countdownStatus: 'stopped',
+  //     masterKeywords: [],
+  //     allKeywords: [],
+  //     wordCloudUrl: undefined,
+  //     ideas: []
+  //   };
 
-  //redux.combineReducers({});
+
+  var reducer = redux.combineReducers({
+    appStage: appStageReducer,
+    count: countReducer,
+    countdownStatus: countdownStatusReducer,
+    masterKeywords: masterKeywordsReducer,
+  });
 
   var store = redux.createStore(reducer, initialState, redux.compose(
     redux.applyMiddleware(thunk),

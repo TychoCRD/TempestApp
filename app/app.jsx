@@ -18,7 +18,7 @@ require('style!css!sass!applicationStyles');
 
 ReactDOM.render(
 	<Provider store={store}>
-	<Main/>
+		<Main/>
 	</Provider>,
 	document.getElementById('app')
 	);
