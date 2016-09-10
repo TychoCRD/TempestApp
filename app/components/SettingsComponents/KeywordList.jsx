@@ -3,14 +3,34 @@ import {connect} from 'react-redux';
 import * as actions from 'actions';
 
 export var KeywordList = React.createClass({
+  handleClick: function(e){
+    var {dispatch} = this.props;
+    var keyword = e.currentTarget.textContent;
+    dispatch(actions.removeKeyword(keyword));
+  },
+  renderList: function(){
+    var {masterKeywords} = this.props;
+    if(masterKeywords.length === 0){
+      return (<p>You haven't set any keywords yet</p>);
+    } else {
+      return masterKeywords.map((keyword)=>{
+        return (
+          <div onClick={this.handleClick}>{keyword}</div>);
+      });
+    }
+  },
   render: function(){
     return (
       <div>
-        You haven't set any keywords yet.
+        {this.renderList()}
       </div>
     );
   }
 });
 
 
-export default connect()(KeywordList);
+export default connect((state)=>{
+  return {
+    masterKeywords: state.masterKeywords
+  };
+})(KeywordList);
