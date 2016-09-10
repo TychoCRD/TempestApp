@@ -11,11 +11,11 @@ export var KeywordList = React.createClass({
   renderList: function(){
     var {masterKeywords} = this.props;
     if(masterKeywords.length === 0){
-      return (<p>You haven't set any keywords yet</p>);
+      return (<p>No keywords set</p>);
     } else {
-      return masterKeywords.map((keyword)=>{
+      return masterKeywords.map((keyword, index)=>{
         return (
-          <div onClick={this.handleClick}>{keyword}</div>);
+          <div key={index} onClick={this.handleClick}>{keyword}</div>);
       });
     }
   },
