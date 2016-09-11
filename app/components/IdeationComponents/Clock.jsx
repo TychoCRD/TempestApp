@@ -3,30 +3,39 @@ import {connect} from 'react-redux';
 import * as actions from 'actions';
 
 var Clock = React.createClass({
-  handleCountdown: function(){
-    var {count, countdownStatus, dispatch} = this.props;
-    if(countdownStatus === 'started' && count > 1){
-      // setInterval to dispatch count down )
-      // return count;
-    } else {
-      // clearInterval
-      // dispatch(actions.stopCountdown());
-      // dispatch(actions.updateAppStage('sorting'));
-    }
-  },
   componentDidMount: function(){
     var {dispatch} = this.props;
-    dispatch(actions.startCountdown());
+    // dispatch(actions.startCountdown());
+    this.timer = setInterval(()=>{
+      dispatch(actions.countDown());
+    }, 1000);
+  },
+  componentDidUpdate: function(){
+    var {count, dispatch} = this.props;
+    if(count === 0){
+      dispatch(actions.updateAppStage('sorting'))
+    }
+  },
+  componentWillUnmount: function(){
+    var {dispatch} = this.props;
+    clearInterval(this.timer);
+    this.timer = undefined;
+    // dispatch(actions.stopCountdown());
+  },
+  count: function(){
+    var {count} = this.props;
+    return count.toString();
   },
   render: function(){
     return(
-      <div>{this.handleCountdown()}</div>
+      <div><span>{this.count()}</span></div>
     );
   }
 });
 
 export default connect((state)=>{
   return {
-    count: state.count
+    count: state.count,
+    countdownStatus: state.countdownStatus
   };
 })(Clock);

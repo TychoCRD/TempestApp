@@ -1,7 +1,7 @@
 import * as redux from 'redux';
 import thunk from 'redux-thunk';
 
-import {appStageReducer, countReducer, countdownStatusReducer, masterKeywordsReducer} from 'reducers';
+import {appStageReducer, countReducer, countdownStatusReducer, masterKeywordsReducer, ideasReducer} from 'reducers';
 
 
 export var configure = (initialState = {})=>{
@@ -22,6 +22,7 @@ export var configure = (initialState = {})=>{
     count: countReducer,
     countdownStatus: countdownStatusReducer,
     masterKeywords: masterKeywordsReducer,
+    ideas: ideasReducer
   });
 
   var store = redux.createStore(reducer, initialState, redux.compose(

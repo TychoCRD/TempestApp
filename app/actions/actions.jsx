@@ -1,3 +1,10 @@
+function dateID() {
+  return Date.now();
+}
+function colorNum() {
+  return Math.floor(Math.random() * (5)) + 1;
+}
+
 
 export var updateAppStage = (nextStage)=>{
   return {
@@ -18,17 +25,23 @@ export var decreaseCount = ()=>{
   };
 };
 
-export var startCountdown = ()=>{
+export var countDown = ()=>{ //needs test
   return {
-    type: 'START_COUNTDOWN'
+    type: 'COUNT_DOWN'
   };
 };
 
-export var stopCountdown = ()=>{
-  return {
-    type: 'STOP_COUNTDOWN'
-  };
-};
+// export var startCountdown = ()=>{
+//   return {
+//     type: 'START_COUNTDOWN'
+//   };
+// };
+//
+// export var stopCountdown = ()=>{
+//   return {
+//     type: 'STOP_COUNTDOWN'
+//   };
+// };
 
 export var addKeyword = (text)=>{
   return {
@@ -41,5 +54,19 @@ export var removeKeyword = (text)=>{
   return {
     type: 'REMOVE_KEYWORD',
     text
+  };
+};
+
+export var addIdea = (text)=>{
+  return {
+    type: 'ADD_IDEA',
+    idea: {
+      id: dateID(),
+      text,
+      boxClass: 'idea-box bg-' + colorNum(),
+      sorted: false,
+      sort: undefined,
+      sortBoxClass: undefined
+    }
   };
 };

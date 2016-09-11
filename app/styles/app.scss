@@ -1,5 +1,7 @@
 @import "base/var";
 
+
+
 // foundation
 @import "/base/foundation-settings";
 @import "foundation";
@@ -7,3 +9,12 @@
 
 
 // Components
+@import "components/ideas";
+
+
+// Base Style override
+
+body, form {
+  color: white;
+  background-color: $background-grey;
+}

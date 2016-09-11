@@ -44,3 +44,16 @@ export var masterKeywordsReducer = (state = [], action)=>{
       return state;
   }
 };
+
+export var ideasReducer = (state = [], action)=>{
+  switch(action.type){
+    case 'ADD_IDEA':
+      return [...state,
+      action.idea
+    ];
+    case 'SORT_IDEA':
+      return [...state]
+    default:
+      return state;
+  }
+};
