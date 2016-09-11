@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import * as actions from 'actions';
 
-var Clock = React.createClass({
+export var Clock = React.createClass({
   componentDidMount: function(){
     var {dispatch} = this.props;
     // dispatch(actions.startCountdown());

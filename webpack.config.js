@@ -27,7 +27,8 @@ module.exports = {
       './app/components',
       './app/api',
       './app/components/SettingsComponents',
-      './app/components/IdeationComponents'
+      './app/components/IdeationComponents',
+      './app/components/SortingComponents'
     ],
     alias: {
       app: 'app',
