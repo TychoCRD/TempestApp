@@ -101,6 +101,25 @@ describe('Reducers', ()=>{
       expect(res[0]).toEqual(action.idea);
     });
 
+    it('should sort idea', ()=>{
+      var ideas = [{
+        id: 123,
+        text: 'test this out',
+        boxClass: 'bg-1',
+        sorted: false,
+        sort: undefined
+      }];
+      var action = {
+        type: 'SORT_IDEA',
+        id: 123,
+        keyword: 'test'
+      };
+      var res = reducers.ideasReducer(df(ideas), df(action));
+
+      expect(res[0].sorted).toEqual(true);
+      expect(res[0].sort).toEqual(action.keyword);
+    });
+
   });
 
 }); // End of Reducers describe

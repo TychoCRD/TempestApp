@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import Clock from 'Clock';
 import IdeaForm from 'IdeaForm';
-import Ideas from 'Ideas';
+import IdeasDisplay from 'IdeasDisplay';
 
 export var Ideation = React.createClass({
   displayKeywords: function(){
@@ -25,7 +25,7 @@ export var Ideation = React.createClass({
         <div>
           <Clock/>
           <IdeaForm/>
-          <Ideas/>
+          <IdeasDisplay/>
         </div>
       </div>
     );

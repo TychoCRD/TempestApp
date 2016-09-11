@@ -70,3 +70,11 @@ export var addIdea = (text)=>{
     }
   };
 };
+
+export var sortIdea = (id, keyword)=>{
+  return {
+    type: 'SORT_IDEA',
+    id,
+    keyword
+  };
+};

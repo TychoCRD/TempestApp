@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import Ideas from 'Ideas';
+import IdeasDisplay from 'IdeasDisplay';
 import IdeaSorter from 'IdeaSorter';
 import SortSpread from 'SortSpread';
 
@@ -10,7 +10,7 @@ export var Sorting = React.createClass({
     return (
       <div>
         <div>
-          <Ideas/>
+          <IdeasDisplay/>
         </div>
         <IdeaSorter/>
         <SortSpread/>

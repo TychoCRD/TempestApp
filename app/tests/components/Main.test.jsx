@@ -1,4 +1,4 @@
-var React = require('React');
+var React = require('react');
 var ReactDOM = require('react-dom');
 import {Provider} from 'react-redux';
 import expect from 'expect';

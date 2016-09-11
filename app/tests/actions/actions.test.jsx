@@ -82,9 +82,21 @@ describe('Actions', ()=>{
         sortBoxClass: undefined
       }
     };
-      var res = actions.addIdea('test');
+      var res = actions.addIdea(action.text);
 
       expect(res.text).toEqual(action.text);
+  });
+
+  it('should generate sortIdea action', ()=>{
+    var action = {
+      type: 'SORT_IDEA',
+      id: 123,
+      keyword: 'test'
+    };
+      var res = actions.sortIdea(action.id, action.keyword);
+
+      expect(res.id).toEqual(action.id);
+      expect(res.keyword).toEqual(action.keyword);
   });
 
 

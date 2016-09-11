@@ -52,7 +52,17 @@ export var ideasReducer = (state = [], action)=>{
       action.idea
     ];
     case 'SORT_IDEA':
-      return [...state]
+      return state.map((idea)=>{
+        if(idea.id === action.id){
+          return {
+            ...idea,
+            sorted: true,
+            sort: action.keyword
+          };
+        } else {
+          return idea;
+        }
+      });
     default:
       return state;
   }

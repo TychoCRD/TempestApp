@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import * as actions from 'actions';
 
-export var Ideas = React.createClass({
+export var IdeasDisplay = React.createClass({
   filterIdeas: function(){
     var {ideas} = this.props;
     return ideas.filter((idea) => !ideas.sorted);
@@ -42,4 +42,4 @@ export default connect((state)=>{
   return {
     ideas: state.ideas
   };
-})(Ideas);
+})(IdeasDisplay);

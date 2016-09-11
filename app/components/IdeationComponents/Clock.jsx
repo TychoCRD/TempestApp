@@ -11,9 +11,13 @@ export var Clock = React.createClass({
     }, 1000);
   },
   componentDidUpdate: function(){
-    var {count, dispatch} = this.props;
+    var {count, dispatch, masterKeywords} = this.props;
     if(count === 0){
-      dispatch(actions.updateAppStage('sorting'))
+        if(masterKeywords.length === 0){
+        dispatch(actions.updateAppStage('display'));
+      } else {
+        dispatch(actions.updateAppStage('sorting'));
+      }
     }
   },
   componentWillUnmount: function(){
@@ -36,6 +40,7 @@ export var Clock = React.createClass({
 export default connect((state)=>{
   return {
     count: state.count,
-    countdownStatus: state.countdownStatus
+    countdownStatus: state.countdownStatus,
+    masterKeywords: state.masterKeywords
   };
 })(Clock);
