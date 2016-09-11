@@ -32,23 +32,23 @@ describe('Actions', ()=>{
     expect(res).toEqual(action);
   });
 
-  it('should generate startCountdown action', ()=>{
-    var action = {
-      type: 'START_COUNTDOWN'
-    };
-    var res = actions.startCountdown();
-
-    expect(res).toEqual(action);
-  });
-
-  it('should generate stopCountdown action', ()=>{
-    var action = {
-      type: 'STOP_COUNTDOWN'
-    };
-    var res = actions.stopCountdown();
-
-    expect(res).toEqual(action);
-  });
+  // it('should generate startCountdown action', ()=>{
+  //   var action = {
+  //     type: 'START_COUNTDOWN'
+  //   };
+  //   var res = actions.startCountdown();
+  //
+  //   expect(res).toEqual(action);
+  // });
+  //
+  // it('should generate stopCountdown action', ()=>{
+  //   var action = {
+  //     type: 'STOP_COUNTDOWN'
+  //   };
+  //   var res = actions.stopCountdown();
+  //
+  //   expect(res).toEqual(action);
+  // });
 
   it('should generate update addKeyword action', ()=>{
     var action = {
@@ -68,6 +68,23 @@ describe('Actions', ()=>{
     var res = actions.removeKeyword(action.text);
 
     expect(res).toEqual(action);
+  });
+
+  it('should generate addIdea action', ()=>{
+    var action = {
+      type: 'ADD_IDEA',
+      idea: {
+        id: 1234,
+        text: 'test',
+        boxClass: 'idea-box bg-1',
+        sorted: false,
+        sort: undefined,
+        sortBoxClass: undefined
+      }
+    };
+      var res = actions.addIdea('test');
+
+      expect(res.text).toEqual(action.text);
   });
 
 

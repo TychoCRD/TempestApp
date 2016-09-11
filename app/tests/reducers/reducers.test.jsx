@@ -68,7 +68,7 @@ describe('Reducers', ()=>{
       };
       var res = reducers.masterKeywordsReducer(df([]), df(action));
 
-      expect(res).toEqual(['test']);
+      expect(res[0]).toEqual('test');
     });
 
     it('should remove keyword', ()=>{
@@ -80,6 +80,27 @@ describe('Reducers', ()=>{
 
       expect(res).toEqual([]);
     });
+  });
+
+  describe('ideasReducer', ()=>{
+    it('should add idea', ()=>{
+      var action = {
+        type: 'ADD_IDEA',
+        idea: {
+          id: 1234,
+          text: 'test',
+          boxClass: 'idea-box bg-1',
+          sorted: false,
+          sort: undefined,
+          sortBoxClass: undefined
+        }
+      };
+      var res = reducers.ideasReducer(df([]), df(action));
+
+      expect(res.length).toEqual(1);
+      expect(res[0]).toEqual(action.idea);
+    });
+
   });
 
 }); // End of Reducers describe

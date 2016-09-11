@@ -9,6 +9,7 @@ var IdeaForm = React.createClass({
     var idea = this.refs.idea.value;
     dispatch(actions.addIdea(idea));
     this.refs.idea.value = '';
+    this.refs.idea.focus();
   },
   render: function(){
     return(
