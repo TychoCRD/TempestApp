@@ -10,11 +10,19 @@ export var IdeaSorter = React.createClass({
   },
   filterIdeas: function(){
     var {ideas} = this.props;
-    return ideas.filter((idea) => !ideas.sorted);
+    return ideas.filter((idea) => !idea.sorted);
   },
   getIdea: function(){
+    var {dispatch} = this.props;
     var filteredIdeas = this.filterIdeas();
-    return filteredIdeas[0].text;
+    if(filteredIdeas.length > 0){
+      return filteredIdeas[0].text;
+    } else {
+      setTimeout(()=>{
+        dispatch(actions.updateAppStage('display'));
+      }, 2000);
+      return 'All ideas sorted!'; 
+    }
   },
   renderButtons: function(){
     var {masterKeywords} = this.props;

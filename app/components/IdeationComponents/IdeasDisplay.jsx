@@ -5,7 +5,7 @@ import * as actions from 'actions';
 export var IdeasDisplay = React.createClass({
   filterIdeas: function(){
     var {ideas} = this.props;
-    return ideas.filter((idea) => !ideas.sorted);
+    return ideas.filter((idea) => !idea.sorted);
   },
   getIdeaNum: function(){
     var filteredIdeas = this.filterIdeas();

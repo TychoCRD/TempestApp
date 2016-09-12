@@ -20,4 +20,6 @@ export var Sorting = React.createClass({
 });
 
 
-export default connect()(Sorting);
+export default connect((state)=>{
+  return state;
+})(Sorting);
