@@ -15,8 +15,7 @@ export var IdeaForm = React.createClass({
     return(
       <div>
         <form onSubmit={this.handleSubmit}>
-          <textarea ref="idea" required>
-          </textarea>
+          <input type="text" ref="idea" required placeholder="Feed me an idea"/>
           <button className="button hollow">+</button>
         </form>
       </div>
