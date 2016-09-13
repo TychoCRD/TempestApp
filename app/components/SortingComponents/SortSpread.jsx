@@ -1,15 +1,28 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import * as actions from 'actions';
 
-export var SortSpread = React.createClass({
+import SortList from 'SortList';
+
+var SortSpread = React.createClass({
+  filterIdeasByKeyword: function(keyword){
+    var {ideas} = this.props;
+    return ideas.filter((idea) => idea.sort === keyword);
+  },
+  renderSortLists: function(){
+    var {masterKeywords} = this.props;
+    var sortlistClass = '';
+    return masterKeywords.map((keyword, index)=>{
+      return (
+        <SortList key={index} keyword={keyword} displayColor={index+1} ideas={this.filterIdeasByKeyword(keyword)}/>
+      );
+    });
+  },
   render: function(){
     return (
       <div>
-        SortSpread
+        {this.renderSortLists()}
       </div>
     );
   }
 });
 
-export default connect()(SortSpread);
+export default SortSpread;

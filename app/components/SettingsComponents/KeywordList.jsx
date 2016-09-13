@@ -9,7 +9,7 @@ var KeywordList = React.createClass({
     } else {
       return masterKeywords.map((keyword, index)=>{
         return (
-          <div key={index} onClick={()=>{handleClick(keyword)}}>{keyword}</div>);
+          <div key={index} onClick={()=>{handleClick(keyword)}}>{keyword + ' X'}</div>);
       });
     }
   },

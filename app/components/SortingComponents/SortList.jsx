@@ -1,15 +1,26 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import * as actions from 'actions';
 
-export var SortList = React.createClass({
+
+var SortList = React.createClass({
+  renderBoxes: function(){
+    var {ideas, displayColor} = this.props;
+    var sortBoxClass = 'idea-box bg-' + displayColor;
+    return ideas.map((idea, index)=>{
+      return (
+        <div key={index} className={sortBoxClass}></div>
+      );
+    });
+  },
   render: function(){
+    var {keyword, displayColor} = this.props;
+    var titleClass = 'sortTitle-' + displayColor;
     return (
       <div>
-        SortList
+        <h2 className={titleClass}>{keyword}</h2>
+        {this.renderBoxes()}
       </div>
     );
   }
 });
 
-export default connect()(SortList);
+export default SortList;

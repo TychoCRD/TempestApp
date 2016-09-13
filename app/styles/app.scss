@@ -10,11 +10,12 @@
 
 // Components
 @import "components/ideas";
+@import "components/sortlist";
 
 
 // Base Style override
 
-body, form {
+body {
   color: white;
   background-color: $background-grey;
 }
