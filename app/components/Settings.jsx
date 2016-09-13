@@ -19,14 +19,18 @@ export var Settings = React.createClass({
         break;
     }
   },
+  deleteKeyword: function(keyword){
+    var {dispatch} = this.props;
+    dispatch(actions.removeKeyword(keyword));
+  },
   render: function(){
-    var {count, dispatch} = this.props;
+    var {count, masterKeywords, dispatch} = this.props;
     return (
       <div>
         <p>Settings</p>
         <CountdownSet count={count} changeTime={this.updateCount}/>
         <KeywordForm/>
-        <KeywordList/>
+        <KeywordList handleClick={this.deleteKeyword} masterKeywords={masterKeywords}/>
         <button className="button" onClick={()=>{dispatch(actions.updateAppStage('ideation'));}}>Start</button>
       </div>
     );

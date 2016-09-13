@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import * as actions from 'actions';
 
-export var CountdownSet = React.createClass({
+var CountdownSet = React.createClass({
   handleTime: function(){
     var {count} = this.props;
     var seconds = count % 60;
