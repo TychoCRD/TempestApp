@@ -3,12 +3,8 @@ import {connect} from 'react-redux';
 import * as actions from 'actions';
 
 export var IdeasDisplay = React.createClass({
-  filterIdeas: function(){
-    var {ideas} = this.props;
-    return ideas.filter((idea) => !idea.sorted);
-  },
   getIdeaNum: function(){
-    var filteredIdeas = this.filterIdeas();
+    var {filteredIdeas} = this.props;
     var ideaNum = filteredIdeas.length;
     if(ideaNum === 0){
       return '0 ideas';
@@ -19,7 +15,7 @@ export var IdeasDisplay = React.createClass({
     }
   },
   renderBoxes: function(){
-    var filteredIdeas = this.filterIdeas();
+    var {filteredIdeas} = this.props;
     return filteredIdeas.map((idea, index)=>{
       return (
         <div key={index} className={idea.boxClass}></div>
@@ -38,8 +34,4 @@ export var IdeasDisplay = React.createClass({
   }
 });
 
-export default connect((state)=>{
-  return {
-    ideas: state.ideas
-  };
-})(IdeasDisplay);
+export default IdeasDisplay;

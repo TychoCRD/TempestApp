@@ -17,6 +17,10 @@ export var Ideation = React.createClass({
       });
     }
   },
+  filterIdeas: function(){
+    var {ideas} = this.props;
+    return ideas.filter((idea) => !idea.sorted);
+  },
   render: function(){
     return (
       <div>
@@ -25,7 +29,7 @@ export var Ideation = React.createClass({
         <div>
           <Clock/>
           <IdeaForm/>
-          <IdeasDisplay/>
+          <IdeasDisplay filteredIdeas={this.filterIdeas()}/>
         </div>
       </div>
     );
@@ -34,7 +38,5 @@ export var Ideation = React.createClass({
 
 
 export default connect((state)=>{
-  return {
-    masterKeywords: state.masterKeywords
-  };
+  return state;
 })(Ideation);
