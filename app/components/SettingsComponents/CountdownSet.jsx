@@ -15,31 +15,19 @@ export var CountdownSet = React.createClass({
     return minutes + ':' + seconds;
   },
   render: function(){
-    var {count, dispatch} = this.props;
+    var {changeTime} = this.props;
     var time = this.handleTime();
     return (
       <div>
-        <button className="button" onClick={()=>{
-            if(count > 30){
-            dispatch(actions.decreaseCount());
-            }
-          }}>-</button>
+        <button className="button" onClick={()=>{changeTime('decrease')}}>-</button>
         <div className="clock">
           <span className="clock-text">{time}</span>
         </div>
-        <button className="button" onClick={()=>{
-            if(count < 600){
-              dispatch(actions.increaseCount());
-            }
-            }}>+</button>
+        <button className="button" onClick={()=>{changeTime('increase')}}>+</button>
       </div>
     );
   }
 });
 
 
-export default connect((state)=>{
-  return {
-    count: state.count
-  };
-})(CountdownSet);
+export default CountdownSet;

@@ -7,12 +7,24 @@ import KeywordForm from 'KeywordForm';
 import KeywordList from 'KeywordList';
 
 export var Settings = React.createClass({
+  updateCount: function(adjustment){
+    var {count, dispatch} = this.props;
+    switch(adjustment){
+      case 'decrease':
+        return count > 30 ? dispatch(actions.decreaseCount()) : null;
+        break;
+      case 'increase':
+        return count < 600 ?
+        dispatch(actions.increaseCount()) : null;
+        break;
+    }
+  },
   render: function(){
-    var {dispatch} = this.props;
+    var {count, dispatch} = this.props;
     return (
       <div>
         <p>Settings</p>
-        <CountdownSet/>
+        <CountdownSet count={count} changeTime={this.updateCount}/>
         <KeywordForm/>
         <KeywordList/>
         <button className="button" onClick={()=>{dispatch(actions.updateAppStage('ideation'));}}>Start</button>
@@ -22,4 +34,6 @@ export var Settings = React.createClass({
 });
 
 
-export default connect()(Settings);
+export default connect((state)=>{
+  return state;
+})(Settings);
