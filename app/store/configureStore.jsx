@@ -3,24 +3,23 @@ import thunk from 'redux-thunk';
 
 import {appStageReducer, countReducer, countdownStatusReducer, masterKeywordsReducer, ideasReducer} from 'reducers';
 
+//
+// initial  = {
+//     appStage: 'display',
+//     count: 300,
+//     countdownStatus: 'stopped',
+//     masterKeywords: [],
+//     allKeywords: [],
+//     wordCloudUrl: undefined,
+//     ideas: []
+//   };
 
 export var configure = (initialState = {})=>{
-  //
-  // initial  = {
-  //     appStage: 'display',
-  //     count: 300,
-  //     countdownStatus: 'stopped',
-  //     masterKeywords: [],
-  //     allKeywords: [],
-  //     wordCloudUrl: undefined,
-  //     ideas: []
-  //   };
 
 
   var reducer = redux.combineReducers({
     appStage: appStageReducer,
     count: countReducer,
-    countdownStatus: countdownStatusReducer,
     masterKeywords: masterKeywordsReducer,
     ideas: ideasReducer
   });

@@ -28,7 +28,8 @@ module.exports = {
       './app/api',
       './app/components/SettingsComponents',
       './app/components/IdeationComponents',
-      './app/components/SortingComponents'
+      './app/components/SortingComponents',
+      './app/components/DisplayComponents'
     ],
     alias: {
       app: 'app',

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export var SortList = React.createClass({
+var IdeaShowcase = React.createClass({
   render: function(){
     var {ideaText} = this.props;
     return (
@@ -11,4 +11,4 @@ export var SortList = React.createClass({
   }
 });
 
-export default SortList;
+export default IdeaShowcase;

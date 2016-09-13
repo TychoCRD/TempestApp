@@ -1,25 +1,54 @@
 
-.sortTitle-1 {
+.sort-list {
+  width: 15%;
+  margin: 0 1rem;
+}
+
+.sortTitle {
+  text-align: center;
+  width: 100%;
+  padding: .5rem;
+}
+
+.sortTitleClr-1 {
   color: $idea-color-1;
   border: 1px solid $idea-color-1;
 }
 
-.sortTitle-2 {
+.sortTitleClr-2 {
   color: $idea-color-2;
   border: 1px solid $idea-color-2;
 }
 
-.sortTitle-3 {
+.sortTitleClr-3 {
   color: $idea-color-3;
   border: 1px solid $idea-color-3;
 }
 
-.sortTitle-4 {
+.sortTitleClr-4 {
   color: $idea-color-4;
   border: 1px solid $idea-color-4;
 }
 
-.sortTitle-5 {
+.sortTitleClr-5 {
   color: $idea-color-5;
   border: 1px solid $idea-color-5;
+}
+
+.boxStage-sorting {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.boxStage-display {
+  display: flex;
+  flex-direction: column;
+}
+
+.lg-idea-box {
+  width: 100%;
+  height: auto;
+  margin: 1.5rem;
+  padding: .5rem
 }

@@ -31,18 +31,6 @@ export var countDown = ()=>{ //needs test
   };
 };
 
-// export var startCountdown = ()=>{
-//   return {
-//     type: 'START_COUNTDOWN'
-//   };
-// };
-//
-// export var stopCountdown = ()=>{
-//   return {
-//     type: 'STOP_COUNTDOWN'
-//   };
-// };
-
 export var addKeyword = (text)=>{
   return {
     type: 'ADD_KEYWORD',

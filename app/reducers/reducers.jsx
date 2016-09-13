@@ -21,16 +21,6 @@ export var countReducer = (state = 300, action)=>{
   }
 };
 
-export var countdownStatusReducer = (state = 'stopped', action)=>{
-  switch(action.type){
-    case 'START_COUNTDOWN':
-      return 'started';
-    case 'STOP_COUNTDOWN':
-      return 'stopped';
-    default:
-      return state;
-  }
-};
 
 export var masterKeywordsReducer = (state = [], action)=>{
   switch(action.type){

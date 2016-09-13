@@ -8,17 +8,17 @@ var SortSpread = React.createClass({
     return ideas.filter((idea) => idea.sort === keyword);
   },
   renderSortLists: function(){
-    var {masterKeywords} = this.props;
+    var {masterKeywords, appStage} = this.props;
     var sortlistClass = '';
     return masterKeywords.map((keyword, index)=>{
       return (
-        <SortList key={index} keyword={keyword} displayColor={index+1} ideas={this.filterIdeasByKeyword(keyword)}/>
+        <SortList key={index} appStage={appStage} keyword={keyword} displayColor={index+1} ideas={this.filterIdeasByKeyword(keyword)}/>
       );
     });
   },
   render: function(){
     return (
-      <div>
+      <div className="sort-spread">
         {this.renderSortLists()}
       </div>
     );

@@ -31,7 +31,7 @@ export var Sorting = React.createClass({
     dispatch(actions.sortIdea(filteredIdeas[0].id, keyword));
   },
   render: function(){
-    var {masterKeywords, ideas} = this.props;
+    var {masterKeywords, ideas, appStage} = this.props;
     return (
       <div>
         <div>
@@ -39,7 +39,7 @@ export var Sorting = React.createClass({
         </div>
         <IdeaShowcase ideaText={this.getIdea()}/>
         <IdeaSorter masterKeywords={masterKeywords} handleClick={this.sortIdea}/>
-        <SortSpread masterKeywords={masterKeywords} ideas={ideas}/>
+        <SortSpread masterKeywords={masterKeywords} ideas={ideas} appStage={appStage}/>
       </div>
     );
   }
