@@ -22,9 +22,9 @@ export var IdeasDisplay = React.createClass({
   },
   render: function(){
     return (
-      <div>
+      <div className="idea-boxes-container">
         <p>{this.getIdeaNum()}</p>
-        <div>
+        <div className="idea-boxes">
         {this.renderBoxes()}
         </div>
       </div>

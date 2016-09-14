@@ -12,7 +12,7 @@ var IdeaSorter = React.createClass({
   },
   render: function(){
     return (
-      <div>
+      <div className="idea-sorter-container">
         {this.renderButtons()}
       </div>
     );

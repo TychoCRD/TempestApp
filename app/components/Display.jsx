@@ -11,7 +11,6 @@ export var Display = React.createClass({
     var {masterKeywords, ideas, appStage} = this.props;
     return (
       <div>
-        Display
         <SortSpread masterKeywords={masterKeywords} ideas={ideas} appStage={appStage}/>
         <ExportControls/>
       </div>

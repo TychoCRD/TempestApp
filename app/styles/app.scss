@@ -8,15 +8,49 @@
 @include foundation-everything;
 
 
-// Components
-@import "components/ideas";
-@import "components/sortspread";
-@import "components/sortlist";
-
-
 // Base Style override
 
 body {
   color: white;
   background-color: $background-grey;
 }
+
+.flex-horizontal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.flex-vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.xy-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+
+.sorting-container {
+  @extend .flex-vertical;
+  @extend .xy-center;
+  align-items: center;
+  width: 100%;
+}
+
+
+// Components
+@import "components/ideas";
+@import "components/ideasdisplay";
+@import "components/ideashowcase";
+@import "components/ideasorter";
+@import "components/sortspread";
+@import "components/sortlist";

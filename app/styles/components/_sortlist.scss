@@ -36,19 +36,17 @@
 }
 
 .boxStage-sorting {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  @extend .flex-horizontal;
+  justify-content: flex-start;
 }
 
 .boxStage-display {
-  display: flex;
-  flex-direction: column;
+  @extend .flex-vertical;
 }
 
 .lg-idea-box {
   width: 100%;
   height: auto;
-  margin: 1.5rem;
+  margin-top: 1.5rem;
   padding: .5rem
 }

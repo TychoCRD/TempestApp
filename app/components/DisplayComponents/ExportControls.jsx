@@ -7,7 +7,7 @@ import React from 'react';
   render: function(){
     return (
       <div>
-        <button className="button" onClick={()=>{this.handleClick}}>Save to PDF</button>
+        <button className="button" onClick={()=>{this.handleClick()}}>Save to PDF</button>
       </div>
     );
   }

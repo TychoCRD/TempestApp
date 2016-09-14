@@ -30,15 +30,24 @@ export var Sorting = React.createClass({
     var filteredIdeas = this.filterIdeas();
     dispatch(actions.sortIdea(filteredIdeas[0].id, keyword));
   },
+  renderSorter: function(){
+    var {masterKeywords} = this.props;
+    var filteredIdeas = this.filterIdeas();
+    if(filteredIdeas.length > 0){
+      return <IdeaSorter masterKeywords={masterKeywords} handleClick={this.sortIdea}/>;
+    } else {
+      return null;
+    }
+  },
   render: function(){
     var {masterKeywords, ideas, appStage} = this.props;
     return (
-      <div>
-        <div>
+      <div className="sorting-container">
+        <div className="ideasDisplay-container-sorting">
           <IdeasDisplay filteredIdeas={this.filterIdeas()}/>
         </div>
         <IdeaShowcase ideaText={this.getIdea()}/>
-        <IdeaSorter masterKeywords={masterKeywords} handleClick={this.sortIdea}/>
+        {this.renderSorter()}
         <SortSpread masterKeywords={masterKeywords} ideas={ideas} appStage={appStage}/>
       </div>
     );
