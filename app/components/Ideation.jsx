@@ -28,11 +28,11 @@ export var Ideation = React.createClass({
     this.timer = undefined;
   },
   displayKeywords: function(){
-    var {masterKeywords} = this.props;
-    if(masterKeywords.length === 0){
+    var {allKeywords} = this.props;
+    if(allKeywords.length === 0){
       return (<p>No keywords set</p>);
     } else {
-      return masterKeywords.map((keyword, index)=>{
+      return allKeywords.map((keyword, index)=>{
         return (
           <div key={index} onClick={this.handleClick}>{keyword}</div>);
       });

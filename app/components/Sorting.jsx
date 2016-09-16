@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import * as actions from 'actions';
 
+import IdeasAPI from 'IdeasAPI';
 import IdeasDisplay from 'IdeasDisplay';
 import IdeaShowcase from 'IdeaShowcase';
 import IdeaSorter from 'IdeaSorter';

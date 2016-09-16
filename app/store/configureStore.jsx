@@ -1,7 +1,7 @@
 import * as redux from 'redux';
 import thunk from 'redux-thunk';
 
-import {appStageReducer, countReducer, countdownStatusReducer, masterKeywordsReducer, ideasReducer} from 'reducers';
+import {appStageReducer, countReducer, countdownStatusReducer, masterKeywordsReducer, allKeywordsReducer, ideasReducer} from 'reducers';
 import testState from './testState';
 
 
@@ -12,6 +12,7 @@ export var configure = (initialState = testState)=>{
     appStage: appStageReducer,
     count: countReducer,
     masterKeywords: masterKeywordsReducer,
+    allKeywords: allKeywordsReducer,
     ideas: ideasReducer
   });
 

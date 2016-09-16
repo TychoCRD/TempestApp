@@ -1,3 +1,5 @@
+import IdeasAPI from 'IdeasAPI';
+
 function dateID() {
   return Date.now();
 }
@@ -42,6 +44,27 @@ export var removeKeyword = (text)=>{
   return {
     type: 'REMOVE_KEYWORD',
     text
+  };
+};
+
+export var getAllKeywords = (masterKeywords)=>{
+  var allKeywords = [];
+  masterKeywords.forEach((keyword)=>{
+    IdeasAPI.getKeywordRelated(keyword).then((response)=>{
+      console.log('api response', response);
+      response.forEach((word)=>{
+        allKeywords.push(word);
+      });
+
+    });
+
+
+
+  });
+
+  return {
+    type: 'GET_ALL_KEYWORDS',
+    allKeywords
   };
 };
 

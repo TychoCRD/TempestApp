@@ -7,6 +7,11 @@ import KeywordForm from 'KeywordForm';
 import KeywordList from 'KeywordList';
 
 export var Settings = React.createClass({
+  handleClick: function(){
+    var {dispatch, masterKeywords} = this.props;
+    dispatch(actions.updateAppStage('ideation'));
+    dispatch(actions.getAllKeywords(masterKeywords));
+  },
   updateCount: function(adjustment){
     var {count, dispatch} = this.props;
     switch(adjustment){
@@ -31,7 +36,7 @@ export var Settings = React.createClass({
         <CountdownSet count={count} changeTime={this.updateCount}/>
         <KeywordForm/>
         <KeywordList handleClick={this.deleteKeyword} masterKeywords={masterKeywords}/>
-        <button className="button" onClick={()=>{dispatch(actions.updateAppStage('ideation'));}}>Start</button>
+        <button className="button" onClick={()=>{this.handleClick()}}>Start</button>
       </div>
     );
   }

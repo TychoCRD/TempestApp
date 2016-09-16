@@ -35,6 +35,15 @@ export var masterKeywordsReducer = (state = [], action)=>{
   }
 };
 
+export var allKeywordsReducer = (state = [], action)=>{
+  switch(action.type){
+    case 'GET_ALL_KEYWORDS':
+    return action.allKeywords;
+    default:
+      return state;
+  }
+};
+
 export var ideasReducer = (state = [], action)=>{
   switch(action.type){
     case 'ADD_IDEA':
