@@ -9,9 +9,13 @@ import KeywordList from 'KeywordList';
 export var Settings = React.createClass({
   handleClick: function(){
     var {dispatch, masterKeywords} = this.props;
-    dispatch(actions.toggleLoadingStatus());
-    dispatch(actions.updateAppStage('loading'));
-    dispatch(actions.getAllKeywords(masterKeywords));
+    if(masterKeywords.length === 0){
+        dispatch(actions.updateAppStage('ideation'));
+    } else {
+      dispatch(actions.toggleLoadingStatus());
+      dispatch(actions.updateAppStage('loading'));
+      dispatch(actions.getAllKeywords(masterKeywords));
+    }
   },
   updateCount: function(adjustment){
     var {count, dispatch} = this.props;

@@ -9,14 +9,14 @@ export var Loading = React.createClass({
     var {isLoading, dispatch} = this.props;
     if(isLoading){
       return (
-        <p>Loading new Tempest...</p>
+        <h2>Loading new Tempest...</h2>
       );
     } else {
       setTimeout(()=>{
         dispatch(actions.updateAppStage('ideation'));
-      }, 2000);
+      }, 1500);
       return (
-        <p>Get ready!</p>
+        <h2>Get ready!</h2>
       );
     }
   },
