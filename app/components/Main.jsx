@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import Settings from 'Settings';
+import Loading from 'Loading';
 import Ideation from 'Ideation';
 import Sorting from 'Sorting';
 import Display from 'Display';
@@ -13,6 +14,8 @@ var Main = React.createClass({
     switch(appStage){
       case 'settings':
         return <Settings/>;
+      case 'loading':
+        return <Loading/>;
       case 'ideation':
         return <Ideation/>;
       case 'sorting':

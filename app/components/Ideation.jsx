@@ -46,7 +46,7 @@ export var Ideation = React.createClass({
     var {count} = this.props;
     return (
       <div>
-        <p>Settings</p>
+        <p>Ideation</p>
         <div>{this.displayKeywords()}</div>
         <div>
           <Clock count={count}/>

@@ -47,26 +47,31 @@ export var removeKeyword = (text)=>{
   };
 };
 
-export var getAllKeywords = (masterKeywords)=>{
-  var allKeywords = [];
-  masterKeywords.forEach((keyword)=>{
-    IdeasAPI.getKeywordRelated(keyword).then((response)=>{
-      console.log('api response', response);
-      response.forEach((word)=>{
-        allKeywords.push(word);
-      });
-
-    });
-
-
-
-  });
-
+export var toggleLoadingStatus = ()=>{
   return {
-    type: 'GET_ALL_KEYWORDS',
-    allKeywords
+    type: 'TOGGLE_LOADING_STATUS',
+  };
+}
+
+export var getAllKeywords = (masterKeywords)=>{
+  return (dispatch, getState)=>{
+    console.log('keywords in', masterKeywords);
+
+    return IdeasAPI.getKeywordRelated(masterKeywords).then((response)=>{
+        console.log('api response', response);
+        dispatch(addAllKeywords(response));
+        dispatch(toggleLoadingStatus());
+      }, (err)=>{console.log('error',err)});
+
   };
 };
+
+  export var addAllKeywords = (allKeywords)=>{
+      return {
+        type: 'ADD_ALL_KEYWORDS',
+        allKeywords
+      };
+  };
 
 export var addIdea = (text)=>{
   return {

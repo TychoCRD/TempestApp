@@ -9,7 +9,8 @@ import KeywordList from 'KeywordList';
 export var Settings = React.createClass({
   handleClick: function(){
     var {dispatch, masterKeywords} = this.props;
-    dispatch(actions.updateAppStage('ideation'));
+    dispatch(actions.toggleLoadingStatus());
+    dispatch(actions.updateAppStage('loading'));
     dispatch(actions.getAllKeywords(masterKeywords));
   },
   updateCount: function(adjustment){

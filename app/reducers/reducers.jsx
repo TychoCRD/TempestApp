@@ -21,6 +21,14 @@ export var countReducer = (state = 300, action)=>{
   }
 };
 
+export var isLoadingReducer = (state = false, action)=>{
+  switch(action.type){
+    case 'TOGGLE_LOADING_STATUS':
+    return !state;
+    default:
+      return state;
+  }
+};
 
 export var masterKeywordsReducer = (state = [], action)=>{
   switch(action.type){
@@ -37,7 +45,7 @@ export var masterKeywordsReducer = (state = [], action)=>{
 
 export var allKeywordsReducer = (state = [], action)=>{
   switch(action.type){
-    case 'GET_ALL_KEYWORDS':
+    case 'ADD_ALL_KEYWORDS':
     return action.allKeywords;
     default:
       return state;
