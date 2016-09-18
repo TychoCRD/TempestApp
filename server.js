@@ -34,12 +34,19 @@ app.get('/wordApi', (req, res)=>{
 				}
 			};
 		return rp.get(reqOptions).then((response)=>{
-				var bodyObj = JSON.parse(response);
-				var keywordRelatedArr = bodyObj['associations_array'].filter((word, index)=>{
-					return index < 5 ? true : false;
-				});
-				keywordRelatedArr.unshift(keyword);
-				return keywordRelatedArr.toString();
+
+				var resObj = JSON.parse(response);
+				if(resObj['result_code'] === '200'){
+					console.log(resObj);
+					var keywordRelatedArr = resObj['associations_array'].filter((word, index)=>{
+						return index < 5 ? true : false;
+					});
+					keywordRelatedArr.unshift(keyword);
+					return keywordRelatedArr.toString();
+				} else {
+					console.log('bad code',resObj);
+					return keyword;
+				}
 			}, (err)=>{console.log('error',err)});
 
 	}
@@ -55,6 +62,7 @@ app.get('/wordApi', (req, res)=>{
 	}, (err)=>{console.log('error',err)});
 
 });
+
 
 app.listen(PORT, function(){
 	console.log('Express server is up on port ' + PORT);
