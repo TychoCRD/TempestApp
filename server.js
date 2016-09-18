@@ -60,7 +60,6 @@ app.get('/wordApi', (req, res)=>{
 	Promise.all(keywordArrPromiseCall(keywordArr)).then((responses)=>{
 		res.status(200).send(responses.join(','));
 	}, (err)=>{console.log('error',err)});
-
 });
 
 

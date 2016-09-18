@@ -8,8 +8,17 @@ import IdeasDisplay from 'IdeasDisplay';
 
 export var Ideation = React.createClass({
   componentDidMount: function(){
-    var {dispatch} = this.props;
+    var {dispatch, allKeywords} = this.props;
+    this.wordChoice = {count: 0, cap: (allKeywords.length-1)};
+    this.flashWord = allKeywords[0];
     this.timer = setInterval(()=>{
+      // var {allKeywords} = this.props;
+      if(this.wordChoice.count < this.wordChoice.cap){
+        this.wordChoice.count++;
+      } else {
+        this.wordChoice.count = 0;
+      }
+      this.flashWord = allKeywords[this.wordChoice.count];
       dispatch(actions.countDown());
     }, 1000);
   },
@@ -25,17 +34,18 @@ export var Ideation = React.createClass({
   },
   componentWillUnmount: function(){
     clearInterval(this.timer);
+    this.wordCount = undefined;
     this.timer = undefined;
   },
-  displayKeywords: function(){
+  flashWord: ' ',
+  displayWords: function(flashWord){
     var {allKeywords} = this.props;
     if(allKeywords.length === 0){
-      return (<p>No keywords set</p>);
+      return (<h2>Tempest</h2>);
     } else {
-      return allKeywords.map((keyword, index)=>{
         return (
-          <div key={index} onClick={this.handleClick}>{keyword}</div>);
-      });
+          <div><h2>{flashWord}</h2></div>
+        );
     }
   },
   filterIdeas: function(){
@@ -47,7 +57,7 @@ export var Ideation = React.createClass({
     return (
       <div>
         <p>Ideation</p>
-        <div>{this.displayKeywords()}</div>
+        <div>{this.displayWords(this.flashWord)}</div>
         <div>
           <Clock count={count}/>
           <IdeaForm/>
