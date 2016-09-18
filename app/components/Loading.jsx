@@ -9,7 +9,7 @@ export var Loading = React.createClass({
     var {isLoading, dispatch} = this.props;
     if(isLoading){
       return (
-        <h2>Loading new Tempest...</h2>
+        <h2>Brewing new Tempest...</h2>
       );
     } else {
       setTimeout(()=>{
