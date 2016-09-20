@@ -37,7 +37,7 @@ export var Sorting = React.createClass({
     if(filteredIdeas.length > 0){
       return <IdeaSorter masterKeywords={masterKeywords} handleClick={this.sortIdea}/>;
     } else {
-      return null;
+      return <div className="idea-sorter-container"></div>;
     }
   },
   render: function(){

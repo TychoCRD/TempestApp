@@ -38,6 +38,9 @@
 .boxStage-sorting {
   @extend .flex-horizontal;
   justify-content: flex-start;
+  -webkit-align-content: flex-start;
+  align-content: flex-start;
+  min-height: 72px;
 }
 
 .boxStage-display {

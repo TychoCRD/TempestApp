@@ -1,8 +1,12 @@
 
 .idea-sorter-container {
   @extend .flex-horizontal;
-  justify-content: space-between;
-  margin: 1.25rem 0;
+  justify-content: center;
+  margin: 1rem 0;
   width: 35%;
   min-height: 57px;
+}
+
+.keyword-btn {
+  margin: .5rem;
 }
