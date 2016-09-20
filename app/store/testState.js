@@ -15,7 +15,7 @@
 
 var testState = {
   appStage: 'sorting',
-  masterKeywords: ['android', 'dream'],
+  masterKeywords: ['android', 'dream', 'moonlight', 'c-beams', 'glittering'],
   ideas: [{
     id: 1,
     text: 'Never tell me the odds!',

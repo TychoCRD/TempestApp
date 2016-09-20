@@ -6,7 +6,7 @@ import React from 'react';
   },
   render: function(){
     return (
-      <div>
+      <div className="display-controls-container">
         <button className="button" onClick={()=>{this.handleClick()}}>Save to PDF</button>
       </div>
     );

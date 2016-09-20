@@ -12,6 +12,7 @@ export var Display = React.createClass({
     return (
       <div>
         <SortSpread masterKeywords={masterKeywords} ideas={ideas} appStage={appStage}/>
+        <div className="display-footer"></div>
         <ExportControls/>
       </div>
     );

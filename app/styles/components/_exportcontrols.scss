@@ -1,0 +1,21 @@
+
+
+.display-controls-container {
+  background-color: $background-grey;
+  @extend .flex-horizontal;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 75px;
+  border: 1px solid white;
+
+  .button {
+    margin: 1rem;
+  }
+}
+
+.display-footer {
+  height: 75px;
+}
