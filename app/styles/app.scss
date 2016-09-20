@@ -40,11 +40,17 @@ body {
 
 
 .settings-container,
-.sorting-container,
-.ideation-container {
+.sorting-container {
   @extend .xy-center;
   @extend .flex-vertical;
   align-items: center;
+  width: 100%;
+}
+
+.ideation-container {
+  @extend .xy-center;
+  @extend .flex-horizontal;
+  align-items:center;
   width: 100%;
 }
 
@@ -56,6 +62,8 @@ body {
 @import "components/keywordlist";
 
 // Ideation Components
+@import "components/clock";
+@import "components/ideaform";
 @import "components/ideas";
 @import "components/ideasdisplay";
 

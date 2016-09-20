@@ -13,9 +13,9 @@ export var IdeaForm = React.createClass({
   },
   render: function(){
     return(
-      <div>
+      <div className="ideaform-container">
         <form onSubmit={this.handleSubmit}>
-          <input type="text" ref="idea" required placeholder="Feed me an idea"/>
+          <input className="ideaform-input" type="text" ref="idea" required placeholder="Feed me an idea"/>
           <button className="button hollow">+</button>
         </form>
       </div>

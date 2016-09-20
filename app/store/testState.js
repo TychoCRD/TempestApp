@@ -15,7 +15,7 @@
 
 var testState= {
   appStage: 'settings',
-  // masterKeywords: ['chewbacca', 'solo', 'skywalker', 'darth', 'yoda'],
+  // masterKeywords: ['android', 'dream', 'sheep', 'electric', 'sleep'],
   // ideas: [{
   //   id: 1,
   //   text: 'Never tell me the odds!',

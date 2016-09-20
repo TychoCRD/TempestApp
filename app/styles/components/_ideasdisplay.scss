@@ -1,10 +1,18 @@
 
 
-  .ideasDisplay-container-sorting {
+.ideasDisplay-container-sorting {
     @extend .flex-vertical;
     width: 20%;
     min-height: 97px;
   }
+
+.ideasDisplay-container-ideation {
+  @extend .flex-vertical;
+  width: 96px;
+  min-height: 300px;
+  align-self: flex-end;
+}
+
 
   .idea-boxes-container {
     width: 100%;

@@ -1,0 +1,28 @@
+
+.ideaform-container {
+  margin-right: 1rem;
+  form {
+    @extend .flex-vertical;
+    justify-content: center;
+    align-items: center;
+
+    .button {
+      display: inline-block;
+    }
+  }
+
+}
+
+.ideaform-input {
+  background-color: $background-grey;
+  color: white;
+  display: inline-block;
+  width: 350px;
+  border: 1px solid white;
+  margin-bottom: .5rem;
+
+  &:active,
+  &:focus {
+    background-color: $background-grey;
+  }
+}

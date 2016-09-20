@@ -7,7 +7,7 @@ var Clock = React.createClass({
   },
   render: function(){
     return(
-      <div>
+      <div className="ideation-clock">
         <span>{this.count()}</span>
       </div>
     );

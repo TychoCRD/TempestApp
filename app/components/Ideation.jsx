@@ -46,15 +46,16 @@ export var Ideation = React.createClass({
   render: function(){
     var {count, allKeywords} = this.props;
     return (
-      <div>
-        <p>Ideation</p>
-        <div>
-          <WordSpread allKeywords={allKeywords} word={this.flashWord}/>
-        </div>
-        <div>
-          <Clock count={count}/>
+      <div className="ideation-container">
+        <div className="ideation-left-block">
+          <div className="ideation-clock-words-container">
+            <Clock count={count}/>
+            <WordSpread allKeywords={allKeywords} word={this.flashWord}/>
+          </div>
           <IdeaForm/>
-          <IdeasDisplay filteredIdeas={this.filterIdeas()}/>
+        </div>
+        <div className="ideasDisplay-container-ideation">
+        <IdeasDisplay filteredIdeas={this.filterIdeas()}/>
         </div>
       </div>
     );
