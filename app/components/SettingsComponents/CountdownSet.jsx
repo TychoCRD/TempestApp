@@ -16,12 +16,12 @@ var CountdownSet = React.createClass({
     var {changeTime} = this.props;
     var time = this.handleTime();
     return (
-      <div>
-        <button className="button" onClick={()=>{changeTime('decrease')}}>-</button>
-        <div className="clock">
-          <span className="clock-text">{time}</span>
+      <div className="countdownset-container">
+        <div className="clock-btn" onClick={()=>{changeTime('decrease')}}>-</div>
+        <div className="countdownset-clock">
+          <span className="countdownset-clock-text">{time}</span>
         </div>
-        <button className="button" onClick={()=>{changeTime('increase')}}>+</button>
+        <div className="clock-btn" onClick={()=>{changeTime('increase')}}>+</div>
       </div>
     );
   }

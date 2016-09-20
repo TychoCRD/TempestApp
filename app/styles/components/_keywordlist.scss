@@ -1,0 +1,32 @@
+
+.settings-keywords-start-container {
+  @extend .flex-horizontal;
+  justify-content: space-between;
+  height: 203px;
+  width: 245px;
+  margin: .5rem 0;
+  .button {
+    align-self: flex-start;
+  }
+}
+
+.keywordlist-container {
+  @extend .flex-vertical;
+  width: 125px;
+  height: 100%;
+
+  p {
+    font-size: .75rem;
+    margin: 0;
+  }
+}
+
+.keywordlist-keyword {
+  @extend .flex-horizontal;
+  padding: .1rem .25rem;
+  margin: .25rem 0;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}

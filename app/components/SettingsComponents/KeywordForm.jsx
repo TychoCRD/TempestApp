@@ -19,10 +19,10 @@ export var KeywordForm = React.createClass({
   render: function(){
 
     return (
-      <div>
+      <div className="keywordform-container">
         <form onSubmit={this.handleSubmit}>
-          <input type="text" ref="keyword" placeholder="Enter up to 5 keywords"/>
-          <button className="button hollow">+</button>
+          <input className="keywordform-input" type="text" ref="keyword"/>
+          <button className="button hollow keywordform-btn">+</button>
         </form>
       </div>
     );

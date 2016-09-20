@@ -5,17 +5,18 @@ var KeywordList = React.createClass({
     var {handleClick, masterKeywords} = this.props;
 
     if(masterKeywords.length === 0){
-      return (<p>No keywords set</p>);
+      return (<p>Enter up to 5 keywords</p>);
     } else {
       return masterKeywords.map((keyword, index)=>{
+        var keywordClass = 'keywordlist-keyword bg-' + (index+1);
         return (
-          <div key={index} onClick={()=>{handleClick(keyword)}}>{keyword + ' X'}</div>);
+          <div key={index} className={keywordClass} onClick={()=>{handleClick(keyword)}}><span>{keyword}</span><i className="fa fa-close"/></div>);
       });
     }
   },
   render: function(){
     return (
-      <div>
+      <div className="keywordlist-container">
         {this.renderList()}
       </div>
     );

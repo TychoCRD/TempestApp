@@ -36,12 +36,13 @@ export var Settings = React.createClass({
   render: function(){
     var {count, masterKeywords, dispatch} = this.props;
     return (
-      <div>
-        <p>Settings</p>
+      <div className="settings-container">
         <CountdownSet count={count} changeTime={this.updateCount}/>
         <KeywordForm/>
-        <KeywordList handleClick={this.deleteKeyword} masterKeywords={masterKeywords}/>
-        <button className="button" onClick={()=>{this.handleClick()}}>Start</button>
+        <div className="settings-keywords-start-container">
+          <KeywordList handleClick={this.deleteKeyword} masterKeywords={masterKeywords}/>
+          <button className="button" onClick={()=>{this.handleClick()}}>Start</button>
+        </div>
       </div>
     );
   }

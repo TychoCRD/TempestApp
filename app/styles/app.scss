@@ -39,17 +39,27 @@ body {
 }
 
 
-.sorting-container {
-  @extend .flex-vertical;
+.settings-container,
+.sorting-container,
+.ideation-container {
   @extend .xy-center;
+  @extend .flex-vertical;
   align-items: center;
   width: 100%;
 }
 
 
-// Components
+
+// Settings Components
+@import "components/countdownset";
+@import "components/keywordform";
+@import "components/keywordlist";
+
+// Ideation Components
 @import "components/ideas";
 @import "components/ideasdisplay";
+
+// Sorting Components
 @import "components/ideashowcase";
 @import "components/ideasorter";
 @import "components/sortspread";

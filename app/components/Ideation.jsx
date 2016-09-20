@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import * as actions from 'actions';
 
+import WordSpread from 'WordSpread';
 import Clock from 'Clock';
 import IdeaForm from 'IdeaForm';
 import IdeasDisplay from 'IdeasDisplay';
@@ -38,26 +39,18 @@ export var Ideation = React.createClass({
     this.timer = undefined;
   },
   flashWord: ' ',
-  displayWords: function(flashWord){
-    var {allKeywords} = this.props;
-    if(allKeywords.length === 0){
-      return (<h2>Tempest</h2>);
-    } else {
-        return (
-          <div><h2>{flashWord}</h2></div>
-        );
-    }
-  },
   filterIdeas: function(){
     var {ideas} = this.props;
     return ideas.filter((idea) => !idea.sorted);
   },
   render: function(){
-    var {count} = this.props;
+    var {count, allKeywords} = this.props;
     return (
       <div>
         <p>Ideation</p>
-        <div>{this.displayWords(this.flashWord)}</div>
+        <div>
+          <WordSpread allKeywords={allKeywords} word={this.flashWord}/>
+        </div>
         <div>
           <Clock count={count}/>
           <IdeaForm/>

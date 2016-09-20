@@ -1,0 +1,25 @@
+
+
+.countdownset-container {
+  @extend .flex-horizontal;
+  align-items: center;
+}
+.countdownset-clock {
+  width: 150px;
+  height: 150px;
+  border: 1px solid white;
+  border-radius: 50%;
+  position: relative;
+  margin-bottom: .5rem;
+}
+
+.countdownset-clock-text {
+  @extend .xy-center;
+  font-size: 2rem;
+}
+
+.clock-btn {
+  font-size: 2rem;
+  margin: 1rem;
+  cursor: pointer;
+}
