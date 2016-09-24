@@ -5,7 +5,7 @@ var KeywordList = React.createClass({
     var {handleClick, masterKeywords} = this.props;
 
     if(masterKeywords.length === 0){
-      return (<p>Enter up to 5 keywords</p>);
+      return (<p>[ Enter up to 5 keywords: no numbers, spaces, punctuation ]</p>);
     } else {
       return masterKeywords.map((keyword, index)=>{
         var keywordClass = 'keywordlist-keyword bg-' + (index+1);

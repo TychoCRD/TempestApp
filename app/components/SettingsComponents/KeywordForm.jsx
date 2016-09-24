@@ -3,16 +3,23 @@ import {connect} from 'react-redux';
 import * as actions from 'actions';
 
 export var KeywordForm = React.createClass({
+  checkKeyword: function(keyword){
+    var regex = /[^a-z]/;
+    if(!keyword.match(regex)){
+      return keyword;
+    } else {
+      return false;
+    }
+  },
   handleSubmit: function(e){
     e.preventDefault();
     var {masterKeywords, dispatch} = this.props;
-    var keyword = this.refs.keyword.value;
+    var keyword = this.refs.keyword.value.toLowerCase();
 
-    if(masterKeywords.length < 5){
-      if(keyword.indexOf(' ') > -1){
-        keyword = keyword.split(' ')[0];
-      }
+    if(masterKeywords.length < 5 && keyword.length > 0 && this.checkKeyword(keyword)){
+      keyword = this.checkKeyword(keyword);
       this.refs.keyword.value = '';
+      this.refs.keyword.focus();
       dispatch(actions.addKeyword(keyword));
     }
   },
