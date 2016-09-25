@@ -28,7 +28,7 @@ describe('Reducers', ()=>{
       expect(res).toEqual(130);
     });
 
-    it('should ecrease count', ()=>{
+    it('should decrease count', ()=>{
       var action = {
         type: 'DECREASE_COUNT'
       };
@@ -37,25 +37,25 @@ describe('Reducers', ()=>{
       expect(res).toEqual(70);
     });
 
-  });
-
-  describe('countdownStatusReducer', ()=>{
-    it('should start countdownStatus', ()=>{
+    it('should count down', ()=>{
       var action = {
-        type: 'START_COUNTDOWN'
+        type: 'COUNT_DOWN'
       };
-      var res = reducers.countdownStatusReducer(df('stopped'), df(action));
+      var res = reducers.countReducer(df(100), df(action));
 
-      expect(res).toEqual('started');
+      expect(res).toEqual(99);
     });
 
-    it('should stop countdownStatus', ()=>{
-      var action = {
-        type: 'STOP_COUNTDOWN'
-      };
-      var res = reducers.countdownStatusReducer(df('started'), df(action));
+  });
 
-      expect(res).toEqual('stopped');
+  describe('isLoadingReducer', ()=>{
+    it('should toggle loading status', ()=>{
+      var action = {
+        type: 'TOGGLE_LOADING_STATUS'
+      };
+      var res = reducers.isLoadingReducer(df(false), df(action));
+
+      expect(res).toEqual(true);
     });
 
   });
@@ -80,6 +80,19 @@ describe('Reducers', ()=>{
 
       expect(res).toEqual([]);
     });
+  });
+
+  describe('allKeywordsReducer', ()=>{
+    it('should add all keywords', ()=>{
+      var action = {
+        type: 'ADD_ALL_KEYWORDS',
+        allKeywords: ['test']
+      };
+      var res = reducers.allKeywordsReducer(df([]), df(action));
+
+      expect(res).toEqual(action.allKeywords);
+    });
+
   });
 
   describe('ideasReducer', ()=>{

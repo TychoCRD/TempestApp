@@ -14,7 +14,7 @@ export var countReducer = (state = 300, action)=>{
       return (state+30);
     case 'DECREASE_COUNT':
       return (state-30);
-    case 'COUNT_DOWN': // needs test
+    case 'COUNT_DOWN':
       return (state-1);
     default:
       return state;

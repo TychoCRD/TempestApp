@@ -27,7 +27,7 @@ export var decreaseCount = ()=>{
   };
 };
 
-export var countDown = ()=>{ //needs test
+export var countDown = ()=>{
   return {
     type: 'COUNT_DOWN'
   };
