@@ -7,7 +7,6 @@ import IdeasDisplay from 'IdeasDisplay';
 import IdeaShowcase from 'IdeaShowcase';
 import IdeaSorter from 'IdeaSorter';
 import SortSpread from 'SortSpread';
-import SortList from 'SortList';
 
 export var Sorting = React.createClass({
   filterIdeas: function(){

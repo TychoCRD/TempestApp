@@ -41,7 +41,7 @@ export var Settings = React.createClass({
         <KeywordForm/>
         <div className="settings-keywords-start-container">
           <KeywordList handleClick={this.deleteKeyword} masterKeywords={masterKeywords}/>
-          <button className="button" onClick={()=>{this.handleClick()}}>Start</button>
+          <button id="start-btn" className="button" onClick={()=>{this.handleClick()}}>Start</button>
         </div>
       </div>
     );
