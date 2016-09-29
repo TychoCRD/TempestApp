@@ -1,13 +1,19 @@
 import React from 'react';
 
  var ExportControls = React.createClass({
-  handleClick: function(){
+  handlePrintClick: function(){
      window.print();
   },
   render: function(){
+    var {newTempest} = this.props;
+    (function(){
+    new Clipboard('#copy-button');
+    })();
     return (
-      <div className="display-controls-container">
-        <button className="button" onClick={()=>{this.handleClick()}}>Save to PDF</button>
+      <div className="exportcontrols-container">
+        <button className="button" onClick={()=>{this.handlePrintClick()}}>Save to PDF</button>
+        <button id="copy-button" className="button" data-clipboard-target="#sort-spread-for-copy">Copy Text</button>
+        <button className="button hollow" onClick={()=>{newTempest()}}>New Tempest</button>
       </div>
     );
   }

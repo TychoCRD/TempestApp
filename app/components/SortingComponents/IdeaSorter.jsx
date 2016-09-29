@@ -3,7 +3,7 @@ import React from 'react';
 var IdeaSorter = React.createClass({
   renderButtons: function(){
     var {masterKeywords, handleClick} = this.props;
-    var btnClass = 'button keyword-btn bg-';
+    var btnClass = 'button ideasorter-keyword-btn bg-';
     return masterKeywords.map((keyword, index)=>{
       return (
         <button key={index} className={btnClass + (index+1)} onClick={()=>{handleClick(keyword)}}>{keyword}</button>
@@ -12,7 +12,7 @@ var IdeaSorter = React.createClass({
   },
   render: function(){
     return (
-      <div className="idea-sorter-container">
+      <div className="ideasorter-container">
         {this.renderButtons()}
       </div>
     );

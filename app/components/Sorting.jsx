@@ -44,7 +44,7 @@ export var Sorting = React.createClass({
     var {masterKeywords, ideas, appStage} = this.props;
     return (
       <div className="sorting-container">
-        <div className="ideasDisplay-container-sorting">
+        <div className="ideasdisplay-container-sorting">
           <IdeasDisplay filteredIdeas={this.filterIdeas()}/>
         </div>
         <IdeaShowcase ideaText={this.getIdea()}/>

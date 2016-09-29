@@ -14,7 +14,7 @@
 */
 
 var testState = {
-  appStage: 'settings',
+  appStage: 'settings'
   // masterKeywords: ['android', 'dream', 'moonlight', 'c-beams', 'glittering'],
   // ideas: [{
   //   id: 1,

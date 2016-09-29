@@ -4,38 +4,38 @@
   margin: 0 1rem;
 }
 
-.sortTitle {
+.sort-title {
   text-align: center;
   width: 100%;
   padding: .5rem;
 }
 
-.sortTitleClr-1 {
+.sort-title-clr-1 {
   color: $idea-color-1;
   border: 1px solid $idea-color-1;
 }
 
-.sortTitleClr-2 {
+.sort-title-clr-2 {
   color: $idea-color-2;
   border: 1px solid $idea-color-2;
 }
 
-.sortTitleClr-3 {
+.sort-title-clr-3 {
   color: $idea-color-3;
   border: 1px solid $idea-color-3;
 }
 
-.sortTitleClr-4 {
+.sort-title-clr-4 {
   color: $idea-color-4;
   border: 1px solid $idea-color-4;
 }
 
-.sortTitleClr-5 {
+.sort-title-clr-5 {
   color: $idea-color-5;
   border: 1px solid $idea-color-5;
 }
 
-.boxStage-sorting {
+.ideabox-container-sorting {
   @extend .flex-horizontal;
   justify-content: flex-start;
   -webkit-align-content: flex-start;
@@ -43,7 +43,7 @@
   min-height: 72px;
 }
 
-.boxStage-display {
+.ideabox-container-display {
   @extend .flex-vertical;
 }
 

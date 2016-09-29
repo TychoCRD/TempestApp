@@ -18,7 +18,7 @@ var SortSpread = React.createClass({
   },
   render: function(){
     return (
-      <div className="sort-spread">
+      <div id="sort-spread-for-copy" className="sort-spread">
         {this.renderSortLists()}
       </div>
     );

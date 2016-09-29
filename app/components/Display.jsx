@@ -7,13 +7,18 @@ import ExportControls from 'ExportControls';
 
 
 export var Display = React.createClass({
+  onNewTempest: function(){
+    if(window.confirm('You have saved your work and are ready to start a new Tempest?')){
+      document.location.reload(true);
+    }
+  },
   render: function(){
     var {masterKeywords, ideas, appStage} = this.props;
     return (
-      <div>
+      <div id="display-container">
         <SortSpread masterKeywords={masterKeywords} ideas={ideas} appStage={appStage}/>
         <div className="display-footer"></div>
-        <ExportControls/>
+        <ExportControls newTempest={this.onNewTempest}/>
       </div>
     );
   }

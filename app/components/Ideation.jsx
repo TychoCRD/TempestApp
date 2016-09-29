@@ -54,7 +54,7 @@ export var Ideation = React.createClass({
           </div>
           <IdeaForm/>
         </div>
-        <div className="ideasDisplay-container-ideation">
+        <div className="ideasdisplay-container-ideation">
         <IdeasDisplay filteredIdeas={this.filterIdeas()}/>
         </div>
       </div>

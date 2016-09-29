@@ -23,12 +23,12 @@ var SortList = React.createClass({
   },
   render: function(){
     var {appStage, keyword, displayColor} = this.props;
-    var titleClass = 'sortTitle sortTitleClr-' + displayColor;
-    var boxContainer = 'boxStage-' + appStage;
+    var titleClass = 'sort-title sort-title-clr-' + displayColor;
+    var ideaboxContainerClass = 'ideabox-container-' + appStage;
     return (
       <div className="sort-list">
         <h3 className={titleClass}>{keyword}</h3>
-        <div className={boxContainer}>
+        <div className={ideaboxContainerClass}>
           {this.renderBoxes()}
         </div>
       </div>
