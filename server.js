@@ -3,9 +3,11 @@ var request = require('request');
 var rp = require('request-promise');
 var app = express();
 
-var config = require('./config');
+// var config = require('./config');
 
 const PORT = process.env.PORT || 3000;
+
+const apiKey = process.env.API_KEY;
 
 // check for https traffic and reroute to http
 app.use(function(req, res, next){
@@ -29,7 +31,7 @@ app.get('/wordApi', (req, res)=>{
 		var reqOptions = {
 				url: reqUrl,
 				headers: {
-					'X-Mashape-Key': config.key,
+					'X-Mashape-Key': apiKey,
 					'Accept': 'application/json'
 				}
 			};
